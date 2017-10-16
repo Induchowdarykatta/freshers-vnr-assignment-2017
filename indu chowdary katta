@@ -1,0 +1,107 @@
+public class Customerset{
+
+ int members(int setmembers)
+ {
+ system.out.println("number of customers in customerset1:"+setmembers);
+ }
+ 
+ bill(int tablenumber);
+ {
+ if("if:"+tablenumber+"is ready to pay the bill")
+    payment(tablenumber);
+ }
+ 
+ public int payment(int tablenumber)
+ {
+ int price;
+ int tprice=0;
+ for(string var: fooditem)
+ {
+ int price= qty[i]*var;
+ tprice=tprice+price;
+ i++;
+ }
+ system.out.println("number of customers in customerset1:"+setmembers);
+ }
+ }
+ 
+ class Restaurant{
+ int N=10;
+ int tablecount=N;
+ int queuecount=0;
+  public int tablenumber;
+ public int managetables()
+ {
+   int i=0;
+   if(tablecount>=1)
+   {
+   system.out.println("checkin customerset");
+   tablecount--;
+   for (i=0;i<=N;i++)
+   {
+   if((setnumbers<= chairs around table i)&&(number of people on table i==0)
+   tablenumber=i;
+   }
+   system.out.println("tablenumber:"+tablenumber+"is allocated");
+   else
+   system.out.println("waiting list");
+   queuecount=queuecount+setmembers;
+ }
+ }
+   
+class Manager{
+void menu()
+{
+system.out.println("share the menu to the customers in table:"+tablenumber);
+}
+
+gettheorder()
+{
+public string[][]...fooditems;
+system.out.println("what are the food itemsand quantity ordered by table:"+tablenumber);
+string fooditem[][]={" "," ";" "," ";}
+}
+}
+
+public class Chef{
+foodpreperation();
+{
+for(string var : fooditem[])
+{
+system.out.println("started the preperation of :"+var);
+}
+
+for(string var : fooditem[])
+{
+system.out.println(":"+var+"is prepared for table:"+tablenumber);
+readydish(var);
+}
+}
+
+class Employees{
+readydish(string item){
+system.out.println("serving of :"+item +"is done");
+}}
+
+public class main {
+public static void main(string[] args){
+Customerset customerset1=new Customerset
+ customerset1.members(int 12);
+ customerset1.managetables();
+ customerset1.menu();
+ customerset1.gettheorder();
+ customerset1.foodpreperation();
+ customerset1.bill(int tablenumber);
+}
+}
+
+
+
+
+
+ 
+ 
+ 
+ 
+    
+    
