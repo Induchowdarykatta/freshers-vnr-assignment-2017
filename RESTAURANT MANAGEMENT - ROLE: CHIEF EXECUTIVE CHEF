@@ -1,0 +1,34 @@
+package com.rubicon.hotel.role;
+
+import java.util.ArrayList;
+
+import com.rubicon.hotel.domain.Order;
+import com.rubicon.hotel.domain.OrderDetail;
+
+/*
+ * Executive chef who receives orders and expedites food preparation
+ * */
+public class ExecutiveChef {
+	Order order;
+	LineCook cook;
+	ArrayList<OrderDetail>  orderDetailsList;
+	public ExecutiveChef(Order order) {
+		this.order = order;
+		orderDetailsList = order.getOrderDetail();
+		recieveOrders();
+		assignOrder();
+		for(int i=0; i<orderDetailsList.size(); i++){
+			OrderDetail detail = orderDetailsList.get(i);
+			cook = new LineCook(detail);
+		}
+	}
+	
+	public void recieveOrders(){
+		System.out.println("ExecutiveChef received order ID = "+ order.getOrderID());
+	}
+	
+	public void assignOrder(){
+		System.out.println("ExecutiveChef assigned orders to LineCook");
+	}
+	
+}
