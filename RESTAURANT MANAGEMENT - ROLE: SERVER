@@ -1,0 +1,26 @@
+package com.rubicon.hotel.role;
+
+import com.rubicon.hotel.domain.Customer;
+import com.rubicon.hotel.domain.Order;
+
+/*
+ * Servers who serve the food on the table.
+ * 
+ * */
+
+public class Server {
+	public Order order;
+	public Customer customer;
+	
+	public Server(){
+		
+	}
+	public Server(Order order, Customer customer){
+		this.order = order;
+		this.customer = customer;
+	}
+	
+	public void serveFoodCustomers(){
+		System.out.println("Server server the food to Customer to "+customer.getName());
+	}
+}
