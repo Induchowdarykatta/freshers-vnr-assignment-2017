@@ -1,0 +1,57 @@
+package com.rubicon.hotel.domain;
+
+public class Customer {
+	
+	private String name;
+	private int age;
+	private String gender;
+	private String customerID; 
+	private int tableNo; 
+	
+	public Customer(String customerID, String name, int age, String gender) {
+		super();
+		this.customerID = customerID;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	
+	public String getCustomerID() {
+		return customerID;
+	}
+
+
+	public void setCustomerID(String customerID) {
+		this.customerID = customerID;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public int getTableNo() {
+		return tableNo;
+	}
+
+	public void setTableNo(int tableNo) {
+		this.tableNo = tableNo;
+	}
+	
+}
