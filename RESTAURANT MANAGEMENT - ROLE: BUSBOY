@@ -1,0 +1,32 @@
+package com.rubicon.hotel.role;
+
+import com.rubicon.hotel.domain.Customer;
+
+/*
+ * Bus boys who serve water, clean tables, lay out fresh cloth, etc.
+ * 
+ * */
+public class BusBoy {
+	private Customer customer;
+	
+	public BusBoy(Customer customer){
+		this.customer = customer;
+		cleanTable();
+		layoutFreshCloth();
+		serveWater();
+		
+	}
+	
+	public void serveWater(){
+		System.out.println("Busboy served water to table number "+customer.getTableNo());
+	}
+	
+	public void cleanTable(){
+		System.out.println("Busboy Cleaned table number "+customer.getTableNo());
+	}
+	
+	public void layoutFreshCloth(){
+		System.out.println("Busboy lay out fresh cloth on the table number "+customer.getTableNo());
+	}
+	
+}
