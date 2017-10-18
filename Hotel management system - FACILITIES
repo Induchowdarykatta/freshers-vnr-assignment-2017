@@ -1,0 +1,49 @@
+package com.rubicon.hotel.fecilities;
+
+public class Fecilities {
+	
+	public final static int TableCount = 5;
+	
+	public static int occupiedCount=0; 
+	
+	
+	public int checkIn(){
+		if(occupiedCount < TableCount){
+			occupiedCount = occupiedCount + 1;
+			System.out.println("Host alloted Table "+ occupiedCount);
+   tableno=occupiedCount;
+			return occupiedCount;
+   
+		}else{
+			System.out.println("Your are in Queue");
+			return occupiedCount;
+		}
+		
+	}
+	
+	public void checkOut(){
+		occupiedCount = occupiedCount - 1;
+		System.out.println("Table "+ occupiedCount+ " released");
+	}
+	
+	public void showAvailability(){
+		if(occupiedCount<TableCount){
+			System.out.println("\nTotal tables availalbilty is "+(TableCount-occupiedCount));
+		}else{
+			System.out.println("Full, Please wait");
+		}
+		
+	}
+}
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+    
+    
