@@ -45,6 +45,7 @@ public class OrderDetail
     {
         quantity += add;
         totalPrice = price * Integer.parseInt(quantity);
+        Billpayment=totalPrice
     }
         
 }
