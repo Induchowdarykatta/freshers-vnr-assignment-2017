@@ -1,0 +1,92 @@
+package com.rubicon.hotel.main;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import com.rubicon.hotel.domain.Customer;
+import com.rubicon.hotel.domain.MenuItem;
+import com.rubicon.hotel.domain.Order;
+import com.rubicon.hotel.fecilities.Fecilities;
+import com.rubicon.hotel.role.BusBoy;
+import com.rubicon.hotel.role.ExecutiveChef;
+import com.rubicon.hotel.role.Host;
+import com.rubicon.hotel.role.Manager;
+import com.rubicon.hotel.role.Server;
+
+
+public class HController {
+	 static ArrayList<MenuItem> menuItemArry = new ArrayList<>();
+	
+
+	 public HController(){
+		 
+		 MenuItem dosa =  new MenuItem(1,"Dosa",10, (byte)1);
+		 MenuItem idli =  new MenuItem(2,"IDLI",10, (byte)2);
+		 MenuItem lunch =  new MenuItem(3,"lunch",20, (byte)3);
+		 MenuItem dinner =  new MenuItem(4,"Dinner",100, (byte)4);
+		 MenuItem buffet =  new MenuItem(5,"Buffet",150, (byte)5);
+		 
+		 menuItemArry.add(dosa);
+		 menuItemArry.add(idli);
+		 menuItemArry.add(dinner);
+		 menuItemArry.add(lunch);
+		 menuItemArry.add(buffet);
+		 
+	 }
+	
+	
+	 private void showMenuList()
+	 {
+	        Iterator<MenuItem> it = menuItemArry.iterator();
+	        
+	        while (it.hasNext()) {
+	            MenuItem re = (MenuItem)it.next();
+	             byte menuType = re.getType();
+	             String strMenuType;
+	            switch( menuType)
+	            {
+	                case MenuItem.MAIN:
+	                strMenuType = "Main";
+	                break;
+	                case MenuItem.DRINK:
+	                strMenuType = "Drink";
+	                break;
+	                case MenuItem.DESSERT:
+	                strMenuType = "Dessert";
+	                break;
+	                default:
+	                strMenuType = "Undefined";
+	                break;
+	            }
+	            String output = String.format("Menu ID:%4d  Name:%-10s  Price:%10.2f Type:%s",
+	                                            re.getID(),re.getName(),re.getPrice(),strMenuType);
+	            
+	            
+	            System.out.println(output);
+	            
+	        }
+	 }
+	 
+	 
+	 public static void main(String args[]){
+		 HController controller =  new HController();
+		 Fecilities fecilities = new Fecilities();
+		 Manager manager = new  Manager();
+		 Host host = new Host();
+		 Customer customer = host.recieveCustomer();            //host receives the customer
+      fecilities.showAvailability();                       // checks for availability of tables
+		 host.allotTabble(customer);                            // host allots the table
+     BusBoy boy = new BusBoy(customer);                     // bus boy prepares the table
+     controller.showMenuList();                             // menu is shown to customers.
+		 Order order  = manager.takeOrders(customer, menuItemArry);   // takes order from the customer
+		 ExecutiveChef chef = new ExecutiveChef(order);               //order is sent to executive chef
+		 chef.recieveOrders();
+		chef.assignOrder();
+		 Server server = new Server(order, customer);                 
+		 server.serveFoodCustomers();                        //serves serves the food
+		 manager.prepareBill(customer, order);                //bill payment
+		 
+	 }
+}
+
+
