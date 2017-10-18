@@ -1,0 +1,27 @@
+package com.rubicon.hotel.role;
+
+import com.rubicon.hotel.domain.Customer;
+import com.rubicon.hotel.fecilities.Fecilities;
+
+/*
+ * Host who allot customers tables or queue them up if all tables are in use.
+ * */
+public class Host {
+	
+	Fecilities fecilities = new Fecilities();
+	public Host(){}
+	public void allotTabble(Customer customer){
+		customer.setTableNo(fecilities.checkIn());
+	}
+	
+	public Customer recieveCustomer(){
+	    Customer customer = new Customer("1","Ram", 20, "M");
+	    System.out.println("Host recieved Customer Name "+ customer.getName());
+	    return customer;
+	}
+public static void main(String as[]){
+	Host host = new Host();
+	host.recieveCustomer();
+}
+
+}
