@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+
+import com.rubicon.hotel.domain.Customer;
+import com.rubicon.hotel.domain.MenuItem;
+import com.rubicon.hotel.domain.Order;
+import com.rubicon.hotel.domain.OrderDetail;
+
+/*
+ * who take initial orders, receive complaints, prepare and hand out the bills, etc.
+ * 
+ * */
+
+public class Manager {
+	
+	public Order takeOrders(Customer customer, ArrayList<MenuItem> menuItemArry){
+		System.out.println("Manager receving orders from customer "+customer.getName());	
+		Order order = new Order(1, customer.getCustomerID());
+		OrderDetail detail = new OrderDetail(menuItemArry.get(2), "2");
+		order.addItem(detail);
+		System.out.println("Customer selected Menu Item = "+ menuItemArry.get(2).getName() + "\t Quantity = "+ detail.getQuantity());
+		return order;
+	}
+	public void takeComplaints(Customer customer){
+		System.out.println("Manager preparing recieving complaints from "+ customer.getName());
+	}
+	public void prepareBill(Customer customer, Order order){
+		System.out.println("Manager preparing the Bill for "+ customer.getName());
+	}
+
+}
