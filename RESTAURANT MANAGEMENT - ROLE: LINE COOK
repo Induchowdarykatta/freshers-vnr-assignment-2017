@@ -1,0 +1,25 @@
+package com.rubicon.hotel.role;
+
+import com.rubicon.hotel.domain.OrderDetail;
+
+/*
+ * Line cooks who prepare the food.
+ * */
+public class LineCook {
+	OrderDetail orderDetail;
+	public LineCook(OrderDetail orderDetail){
+		this.orderDetail = orderDetail;
+		prepareFood();
+		assignedTOServer();
+	}
+	
+	public void prepareFood(){
+		System.out.println("LineCook prepared "+orderDetail.getItemName());
+	}
+	
+	public void assignedTOServer(){
+		System.out.println("LineCook assiged "+orderDetail.getItemName()+" food to Server");
+	}
+
+
+}
